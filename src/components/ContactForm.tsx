@@ -17,7 +17,7 @@ export default function ContactForm() {
 
     try {
       // Use Formspree fallback or simulation as requested
-      const response = await fetch("https://formspree.io/f/mnqeonqr", {
+      const response = await fetch("https://formspree.io/f/mqerzorz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
