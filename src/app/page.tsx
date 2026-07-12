@@ -212,8 +212,8 @@ export default function Home() {
             <div className="space-y-4 pt-4 text-sm text-text-secondary">
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-primary-custom" />
-                <a href="mailto:omar230101276@sut.edu.eg" className="hover:text-white transition-colors duration-200">
-                  omar230101276@sut.edu.eg
+                <a href="mailto:omargaffer51@gmail.com" className="hover:text-white transition-colors duration-200">
+                  omargaffer51@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
