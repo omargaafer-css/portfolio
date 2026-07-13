@@ -138,7 +138,7 @@ export default function ProjectsGrid() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover object-top opacity-70 hover:opacity-90 transition-opacity duration-300"
+                  className="object-contain object-center opacity-85 hover:opacity-100 transition-opacity duration-300 p-1"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               ) : (

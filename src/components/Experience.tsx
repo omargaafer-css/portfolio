@@ -49,18 +49,6 @@ export default function Experience() {
       ],
       icon: <GraduationCap size={18} className="text-[#10B981]" />,
     },
-    {
-      id: 4,
-      type: "training",
-      title: "Career Compass Development Scholar",
-      organization: "Nile University",
-      period: "2025",
-      description: [
-        "Completed rigorous software architecture, career engineering, and product development workshops.",
-        "Refined technical communication skills and collaborative software design methodologies.",
-      ],
-      icon: <Award size={18} className="text-[#F59E0B]" />,
-    },
   ];
 
   return (

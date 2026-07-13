@@ -356,7 +356,7 @@ export default async function ProjectPage({ params }: PageProps) {
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover object-top"
+              className="object-contain object-center p-2"
               sizes="(max-width: 1024px) 100vw, 896px"
             />
           </div>
