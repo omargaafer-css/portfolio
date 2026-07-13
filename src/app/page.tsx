@@ -5,35 +5,10 @@ import SkillsList from "@/components/SkillsList";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import Experience from "@/components/Experience";
 import ContactForm from "@/components/ContactForm";
+import CertificationsGrid from "@/components/CertificationsGrid";
 import { Download, Github, Linkedin, Mail, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function Home() {
-  const certifications = [
-    {
-      title: "Summer Internship 2025",
-      issuer: "Elsewedy Electric PSP",
-      date: "2025",
-      image: "/certifications/Summer Internship 2025 -Elsewedy Electric PSP-.jpeg",
-    },
-    {
-      title: "Junior Penetration Tester",
-      issuer: "TryHackMe",
-      date: "2025",
-      image: "/certifications/Jr Penetration Tester -Try Hack Me-.jpeg",
-    },
-    {
-      title: "Pre Security Certified",
-      issuer: "TryHackMe",
-      date: "2025",
-      image: "/certifications/Pre Security -Try Hack Me-.jpeg",
-    },
-    {
-      title: "Career Compass Scholar",
-      issuer: "Nile University",
-      date: "2025",
-      image: "/certifications/Career Compass -Nile University-.jpeg",
-    },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col pt-16">
@@ -171,33 +146,7 @@ export default function Home() {
               Academic credentials, corporate internship sign-offs, and security program completions.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert) => (
-              <div
-                key={cert.title}
-                className="bg-[#0E1322]/60 border border-border-custom rounded-xl overflow-hidden shadow-lg group hover:border-slate-700 transition-colors duration-300"
-              >
-                <div className="relative aspect-video w-full bg-slate-950 border-b border-border-custom overflow-hidden">
-                  <Image
-                    src={cert.image}
-                    alt={cert.title}
-                    fill
-                    className="object-contain object-center group-hover:scale-[1.02] transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center gap-1.5 mb-1 text-primary-custom">
-                    <ShieldCheck size={16} />
-                    <span className="text-[10px] font-bold font-mono uppercase tracking-wider">Verified Credential</span>
-                  </div>
-                  <h3 className="text-sm sm:text-base font-bold text-white mb-0.5">{cert.title}</h3>
-                  <p className="text-xs text-text-secondary">{cert.issuer}</p>
-                  <p className="text-[10px] text-text-secondary/70 font-mono mt-2">{cert.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CertificationsGrid />
         </div>
       </section>
 
