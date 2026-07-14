@@ -47,7 +47,7 @@ export default function ProjectsGrid() {
       description: "A containerized shopping API framework separating catalog, cart, order and payment into autonomous FastAPI servers prepared for Kubernetes orchestration.",
       tags: ["FastAPI", "React", "Docker", "Kubernetes", "Microservices"],
       category: "backend",
-      image: "", // Render code block overlay if no image
+      image: "/projects/E-Commerce App/dashboard.png",
       icon: <Database className="text-[#F59E0B]" size={20} />,
     },
     {

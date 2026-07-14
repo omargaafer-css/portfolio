@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Github, Globe, Check, AlertTriangle, Lightbulb, Settings, Cpu, Shield, Database, Code } from "lucide-react";
+import ProjectGallery from "@/components/ProjectGallery";
 
 interface ProjectDetail {
   id: string;
@@ -21,6 +22,7 @@ interface ProjectDetail {
   github: string;
   demo?: string;
   image?: string;
+  screenshots?: string[];
   iconType: "ai" | "security" | "backend" | "frontend";
 }
 
@@ -54,6 +56,13 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/SpecSense-AI",
     image: "/projects/SpecSense AI/Dashboard.png",
+    screenshots: [
+      "/projects/SpecSense AI/Dashboard.png",
+      "/projects/SpecSense AI/Vision Inspection.png",
+      "/projects/SpecSense AI/ocr .png",
+      "/projects/SpecSense AI/tech assistant.png",
+      "/projects/SpecSense AI/assistant result.png"
+    ],
     iconType: "ai"
   },
   "edgmon-v4": {
@@ -86,6 +95,15 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/EdgMon_V4.0",
     image: "/projects/EdgMon V4.0/dashbord.png",
+    screenshots: [
+      "/projects/EdgMon V4.0/dashbord.png",
+      "/projects/EdgMon V4.0/cpu.png",
+      "/projects/EdgMon V4.0/disk.png",
+      "/projects/EdgMon V4.0/memory.png",
+      "/projects/EdgMon V4.0/network.png",
+      "/projects/EdgMon V4.0/system info.png",
+      "/projects/EdgMon V4.0/temp.png"
+    ],
     iconType: "security"
   },
   "ecommerce-microservices": {
@@ -117,6 +135,13 @@ const projectsData: Record<string, ProjectDetail> = {
       "Implement PostgreSQL data layer for permanent order records"
     ],
     github: "https://github.com/omar230101276/e-commerce-microservices",
+    image: "/projects/E-Commerce App/dashboard.png",
+    screenshots: [
+      "/projects/E-Commerce App/dashboard.png",
+      "/projects/E-Commerce App/cluster status.png",
+      "/projects/E-Commerce App/orders.png",
+      "/projects/E-Commerce App/products.png"
+    ],
     iconType: "backend"
   },
   "huffman-compressor": {
@@ -148,6 +173,9 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/Huffman_Compressor",
     image: "/projects/Huffman Compression/Dashbord.png",
+    screenshots: [
+      "/projects/Huffman Compression/Dashbord.png"
+    ],
     iconType: "backend"
   },
   "apexbank": {
@@ -180,6 +208,9 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/Bank_Web_FrontEnd",
     image: "/projects/Web Bank/dashbord.png",
+    screenshots: [
+      "/projects/Web Bank/dashbord.png"
+    ],
     iconType: "frontend"
   },
   "photographer-ms": {
@@ -211,6 +242,18 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/abady",
     image: "/projects/Photogapher MS/Home page.png",
+    screenshots: [
+      "/projects/Photogapher MS/Home page.png",
+      "/projects/Photogapher MS/home 2.png",
+      "/projects/Photogapher MS/Admin Dashboard.png",
+      "/projects/Photogapher MS/admin add vid.png",
+      "/projects/Photogapher MS/alboms.png",
+      "/projects/Photogapher MS/booking portal.png",
+      "/projects/Photogapher MS/booking.png",
+      "/projects/Photogapher MS/contant.png",
+      "/projects/Photogapher MS/manage booking.png",
+      "/projects/Photogapher MS/profile settings.png"
+    ],
     iconType: "backend"
   },
   "storm-breaker": {
@@ -242,6 +285,9 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/ultrasecurity/Storm-Breaker",
     image: "/projects/Click Breaker/Dashboard.png",
+    screenshots: [
+      "/projects/Click Breaker/Dashboard.png"
+    ],
     iconType: "security"
   },
   "edgmon-v3-1": {
@@ -274,6 +320,12 @@ const projectsData: Record<string, ProjectDetail> = {
     ],
     github: "https://github.com/omar230101276/Automated_Server_Monitorin-Linux-Windows-",
     image: "/projects/EdgMon V3.1/dashbord.png",
+    screenshots: [
+      "/projects/EdgMon V3.1/dashbord.png",
+      "/projects/EdgMon V3.1/alerts.png",
+      "/projects/EdgMon V3.1/metrics.png",
+      "/projects/EdgMon V3.1/system info.png"
+    ],
     iconType: "security"
   }
 };
@@ -349,18 +401,12 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Project Image Banner */}
-        {project.image && (
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-border-custom bg-slate-950 mb-8">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-contain object-center p-2"
-              sizes="(max-width: 1024px) 100vw, 896px"
-            />
-          </div>
-        )}
+        {/* Project Image Gallery */}
+        <ProjectGallery
+          screenshots={project.screenshots}
+          title={project.title}
+          iconType={project.iconType}
+        />
 
         {/* Detailed Sections */}
         <div className="space-y-8">
