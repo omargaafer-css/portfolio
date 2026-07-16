@@ -327,6 +327,40 @@ const projectsData: Record<string, ProjectDetail> = {
       "/projects/EdgMon V3.1/system info.png"
     ],
     iconType: "security"
+  },
+  "enterprise-network": {
+    id: "enterprise-network",
+    title: "Multi-VLAN Enterprise Network",
+    subtitle: "Secure Multi-VLAN Routing & OSPF Integration",
+    description: "A hands-on implementation demonstrating network planning, dynamic OSPF routing, subnet partitions (VLSM), and multi-VLAN segmentation across switches and routers.",
+    overview: "This project implements a secure, scalable, and dynamic enterprise network topology. It spans 22 VLANs, 44 endpoints, 5 routers, and 5 switches to simulate a realistic department-based enterprise structure. Dynamic OSPF routing handles convergence and routing, while VLSM subnetting optimizes IP address distribution.",
+    problem: "Modern enterprise departments require isolated broadcast domains to prevent broadcast storms, limit security exposure, and structure access. Dynamic, fault-tolerant routing must connect these subnets without exhausting the IP address space.",
+    solution: "Segmented the topology into 22 distinct VLANs across 5 switches to enforce security policies and manage traffic. Connected the networks through 5 Cisco routers running OSPF dynamic routing for automatic route propagation and fast convergence. Configured subinterfaces (Router-on-a-Stick) and SVIs, verified via automated pings and custom VLSM calculator scripts.",
+    features: [
+      "Dynamic OSPF Routing (automatic route discovery and convergence across 5 routers)",
+      "VLAN Segmentation (22 VLAN subnets and 44 endpoints isolating broadcast domains)",
+      "VLSM Addressing (custom Python subnetting calculator preventing IP address waste)",
+      "Verification and Pings (fully tested connection paths and routing states)"
+    ],
+    architecture: "22 VLAN Endpoints -> Local Cisco Switches -> Router-on-a-Stick (subinterfaces) -> 5 OSPF Core Routers -> Dynamic Routing Backbone",
+    techStack: ["Cisco Packet Tracer", "OSPF Routing", "VLANs & SVIs", "VLSM Subnetting", "Python (ipaddress)"],
+    decisions: [
+      "Utilized Router-on-a-Stick (subinterfaces) to enable inter-VLAN routing without deploying expensive dedicated physical cabling for each VLAN.",
+      "Configured dynamic OSPF routing instead of static routing to build automated route convergence and load balancing across WAN links."
+    ],
+    challenges: "Aligning and managing 22 distinct IP subnets over 5 separate routers can lead to route mismatching or IP overlap during Cisco configuration CLI stages.",
+    lessons: "Designing all IP allocations beforehand using a custom Python VLSM subnetting calculator prevents collision and guarantees network statements map correctly to OSPF areas.",
+    future: [
+      "Incorporate access control list (ACL) traffic firewalls between departments",
+      "Deploy localized DHCP servers to automate endpoint IP assignment",
+      "Integrate redundant gateway paths with HSRP or VRRP protocols"
+    ],
+    github: "https://github.com/omar230101276/Enterprise-Network",
+    image: "/projects/Enterprise Network/Design.png",
+    screenshots: [
+      "/projects/Enterprise Network/Design.png"
+    ],
+    iconType: "security"
   }
 };
 

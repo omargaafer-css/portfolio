@@ -100,6 +100,16 @@ export default function ProjectsGrid() {
       image: "/projects/EdgMon V3.1/dashbord.png",
       icon: <Shield className="text-text-secondary" size={20} />,
     },
+    {
+      id: "enterprise-network",
+      title: "Enterprise Network",
+      subtitle: "Multi-VLAN Routing & OSPF Integration",
+      description: "A simulated enterprise-scale network utilizing dynamic OSPF routing, subnet partitions (VLSM), and multi-VLAN segmentation across switches and routers.",
+      tags: ["Cisco Packet Tracer", "OSPF Routing", "VLSM Subnetting", "VLANs & SVIs", "Python"],
+      category: "security",
+      image: "/projects/Enterprise Network/Design.png",
+      icon: <Shield className="text-[#EF4444]" size={20} />,
+    },
   ];
 
   const filteredProjects =
